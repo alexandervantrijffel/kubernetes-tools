@@ -22,8 +22,6 @@ spec:
         k8s-app: traefik-ingress-lb
         name: traefik-ingress-lb
     spec:
-      nodeSelector:
-        loadbalancer: assigned
       serviceAccountName: traefik-ingress-controller
       terminationGracePeriodSeconds: 60
       hostNetwork: true
