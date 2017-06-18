@@ -1,4 +1,4 @@
-# Setup a new kubernetes cluster
+# Setup a new kubernetes cluster on bare metal
 
 Execute the following commands, replace IP-of-master:
 
@@ -55,7 +55,7 @@ Run
 kubectl apply -f https://raw.githubusercontent.com/containous/traefik/master/examples/k8s/traefik-rbac.yaml
 kubectl apply -f https://raw.githubusercontent.com/containous/traefik/master/examples/k8s/traefik.yaml
 ```
-Checks wheter the traefik-ingress-controller is running
+Check whether the traefik-ingress-controller is running
 ```shell
 kubectl --namespace=kube-system get pods
 ```
