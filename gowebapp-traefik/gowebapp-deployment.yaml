@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gowebapp
+  namespace: kube-system
+  labels:
+    app: gowebapp
+    visualize: "true"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gowebapp
+        visualize: "true"
+    spec:
+      containers:
+      - name: gowebapp
+        image: kube-registry.kube-system.svc.cluster.local:31000/gowebapp:latest
+        ports:
+        - name: web
+          containerPort: 80

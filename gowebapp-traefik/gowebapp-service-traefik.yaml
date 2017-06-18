@@ -1,0 +1,29 @@
+# make sure traefic is installed as described in https://docs.traefik.io/user-guide/kubernetes/#submitting-an-ingress-to-the-cluster
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gowebapp
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  selector:
+    app: gowebapp
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gowebapp
+spec:
+  rules:
+  - host: gowebapp
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gowebapp
+          servicePort: 80

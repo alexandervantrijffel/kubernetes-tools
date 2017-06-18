@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-ubuntu
+  namespace: default
+spec:
+  containers:
+  - image: structura/busybox-ubuntu:latest
+    command:
+      - sleep
+      - "3600"
+    name: busybox-ubuntu
+  restartPolicy: Always
+
+  # to run it without installing:
+  # kubectl run -i --tty busybox-ubuntu --image=structura/busybox-ubuntu:latest --restart=Never -- sh
