@@ -76,3 +76,9 @@ kubectl apply -f https://raw.githubusercontent.com/containous/traefik/master/exa
 Map the host traefik-ui.minikube to the public ip of the traefik controller mode and the traefik dashboard can be accessed on URL http://traefik-ui.minikube  
 
 Another example app can be found at https://github.com/alexandervantrijffel/kubernetes-tools/tree/master/gowebapp-traefik
+
+
+# Memory usage of Kubernetes
+Bare ubuntu 16.04 server: 197MB in use
+Ubuntu 16.04 server with kubernetes master node: 656MB in use (459MB for kubernetes+docker)
+Ubuntu 16.04 server with kubernetes worker node: 520MB in use (323MB for kubernetes+docker)
